@@ -130,7 +130,6 @@ class AirportServiceTest {
     void updateAirport_WhenExists_ShouldUpdateAirport() {
         // Given
         when(airportRepository.findById(1L)).thenReturn(Optional.of(airport));
-        when(airportRepository.existsByCode("JFK")).thenReturn(false);
         when(airportRepository.save(any(Airport.class))).thenReturn(airport);
         when(modelMapper.map(airport, AirportDTO.class)).thenReturn(airportDTO);
 
